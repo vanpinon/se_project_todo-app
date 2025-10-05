@@ -68,20 +68,17 @@ class FormValidator {
   }
 
   resetValidation() {
-    const buttonElement = this._formElement.querySelector(
-      this._submitButtonSelector
-    );
-    this._formElement = formElement;
-    this._inputList = Array.from(
-      this._formElement.querySelectorAll(this._inputSelector)
-    );
+    this._formElement.reset();
 
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
 
-    this._buttonElement.classList.add(this._inactiveButtonClass);
-    this._buttonElement.disabled = true;
+    const buttonElement = this._formElement.querySelector(
+      this._submitButtonSelector
+    );
+    buttonElement.classList.add(this._inactiveButtonClass);
+    buttonElement.disabled = true;
   }
 
   enableValidation() {

@@ -22,7 +22,7 @@ class Todo {
     this._todoLabel.setAttribute("for", `todo-${this._data.id}`);
   }
 
-  _generatedueDate() {
+  _generateDueDate() {
     this._todoDate = this._todoElement.querySelector(".todo__date");
 
     this._dueDate = new Date(this._data.date);
@@ -49,7 +49,7 @@ class Todo {
     todoNameEl.textContent = this._data.name;
 
     this._generateCheckboxEl();
-    this._generatedueDate();
+    this._generateDueDate();
     this._setEventListeners();
 
     return this._todoElement;
